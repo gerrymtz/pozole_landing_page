@@ -1,0 +1,86 @@
+@use "index/index";
+
+*,
+::after,
+::before {
+    @include index.resetSettings;
+}
+
+html {
+    @include index.setHTMLSettings;
+}
+
+body {
+    @include index.setBodySettings;
+}
+
+.container {
+    @include index.setContainer;
+}
+
+.header {
+    height: 100vh;
+
+    .header__nav {
+        height: index.$height_navbar;
+        background-color: index.$color_menu;
+
+        .nav__container {
+            height: 100%;
+            @include index.setNavContainer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav__figure {
+                height: 100%;
+
+                .nav__img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: cover;
+                }
+
+            }
+
+            .nav__menu {
+
+                .nav__list {
+                    display: inline;
+                    margin-right: 2em;
+
+                    &:last-of-type {
+                        margin: 0;
+                    }
+
+                    .nav__link {
+                        color: index.$color_text_1;
+                        text-decoration: none;
+                        font-family: index.$roboto-sans-serif;
+                        font-size: index.$paragraph_size;
+                        font-weight: index.$roboto_sans_serif_weight700;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .header__content {
+        background-image: url(../assets/images/pozole_background.jpeg);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100% - index.$height_navbar);
+
+        .header__container {
+            height: 100%;
+        }
+
+    }
+
+}

@@ -1,3 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+*,
+::after,
+::before {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 0;
+  outline: 2px solid black;
+}
+
+.header {
+  height: 100vh;
+}
+.header .header__nav {
+  height: 90px;
+  background-color: black;
+}
+.header .header__nav .nav__container {
+  height: 100%;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 15px 0;
+  outline: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__nav .nav__container .nav__figure {
+  height: 100%;
+}
+.header .header__nav .nav__container .nav__figure .nav__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.header .header__nav .nav__container .nav__menu .nav__list {
+  display: inline;
+  margin-right: 2em;
+}
+.header .header__nav .nav__container .nav__menu .nav__list:last-of-type {
+  margin: 0;
+}
+.header .header__nav .nav__container .nav__menu .nav__list .nav__link {
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+.header .header__content {
+  background-image: url(../assets/images/pozole_background.jpeg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100% - 90px);
+}
+.header .header__content .header__container {
+  height: 100%;
+}
 
 /*# sourceMappingURL=styles.css.map */
