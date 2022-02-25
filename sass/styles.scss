@@ -89,6 +89,7 @@ body {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        background-attachment: fixed;
         height: calc(100% - index.$height_navbar);
         position: relative;
 
@@ -203,42 +204,135 @@ body {
         font-family: index.$roboto-sans-serif;
 
         .information__container {
-            height: 600px;
             margin-top: 100px;
-            display: flex;
-            justify-content: space-between;
-    
-            .info__texts {
-                width: 50%;
-                padding: 50px 0;
 
-                .info__title {
-                    font-size: index.$title_size;
+            .info__main {
+                display: flex;
+                justify-content: space-between;
+
+                .info__texts {
+                    width: 50%;
+                    padding: 50px 0;
+    
+                    .info__title {
+                        font-size: index.$title_size;
+                    }
+    
+                    .info__paragraph {
+                        margin-top: 2em;
+                        font-size: index.$small_size;
+                        font-weight: index.$roboto_sans_serif_weight700;
+    
+                        &:last-of-type {
+                            margin-top: 0;
+                        }
+    
+                    }
+    
+                }
+        
+                .info__figure {
+                    width: 45%;
+        
+                    .info__img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+        
                 }
 
-                .info__paragraph {
-                    margin-top: 2em;
-                    font-size: index.$small_size;
+            }
+    
+            .info__desc {
+                width: 80%;
+                padding: 2em;
+                margin: 0 auto;
+                margin-top: 4em;
+                border: 5px solid index.$color_principal;
+
+                .desc__paragraph {
+                    font-size: index.$paragraph_size;
                     font-weight: index.$roboto_sans_serif_weight700;
                 }
 
             }
     
-            .info__figure {
-                width: 45%;
-    
-                .info__img {
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    object-fit: cover;
-                    border-radius: 5px;
-                }
-    
-            }
-    
         }
     
+    }
+
+    .gallery {
+        margin-top: 3em;
+
+        .gallery__container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            overflow: visible;
+
+            .gallery__figure {
+                overflow: hidden;
+                cursor: pointer;
+                transform: scale(1);
+                transition: 150ms transform;
+                border-radius: 3px;
+
+                &:hover {
+                    transform: scale(1.07);
+                    transition: 350ms transform;
+                    z-index: 1;
+                }
+
+                .gallery__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                
+                &:nth-of-type(1) {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+
+                &:nth-of-type(2) {
+                    grid-column: 2 / 3;
+                    grid-row: 1 / -1;
+                }
+
+                &:nth-of-type(3) {
+                    grid-column: 3 / 4;
+                    grid-row: 1 / 2;
+                }
+
+                &:nth-of-type(4) {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 4;
+                }
+
+                &:nth-of-type(5) {
+                    grid-column: 3 / 4;
+                    grid-row: 2 / 3;
+                }
+
+                &:nth-of-type(6) {
+                    grid-column: 3 / 4;
+                    grid-row: 3 / 4;
+                }
+
+            }
+
+        }
+
+    }
+
+    .contact {
+        
     }
 
 }
