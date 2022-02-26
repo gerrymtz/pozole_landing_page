@@ -88,7 +88,6 @@ body {
         background-image: url(../assets/images/background.jpg);
         background-position: center;
         background-size: cover;
-        background-repeat: no-repeat;
         background-attachment: fixed;
         height: calc(100% - index.$height_navbar);
         position: relative;
@@ -273,57 +272,15 @@ body {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 10px;
-            overflow: visible;
 
             .gallery__figure {
-                overflow: hidden;
-                cursor: pointer;
-                transform: scale(1);
-                transition: 150ms transform;
-                border-radius: 3px;
 
-                &:hover {
-                    transform: scale(1.07);
-                    transition: 350ms transform;
-                    z-index: 1;
-                }
-
-                .gallery__img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                }
-                
-                &:nth-of-type(1) {
-                    grid-column: 1 / 2;
-                    grid-row: 1 / 2;
-                }
-
-                &:nth-of-type(2) {
-                    grid-column: 2 / 3;
-                    grid-row: 1 / -1;
-                }
-
-                &:nth-of-type(3) {
-                    grid-column: 3 / 4;
-                    grid-row: 1 / 2;
-                }
-
-                &:nth-of-type(4) {
-                    grid-column: 1 / 2;
-                    grid-row: 2 / 4;
-                }
-
-                &:nth-of-type(5) {
-                    grid-column: 3 / 4;
-                    grid-row: 2 / 3;
-                }
-
-                &:nth-of-type(6) {
-                    grid-column: 3 / 4;
-                    grid-row: 3 / 4;
-                }
+                @include index.setImageLinearGradient(1, 1, 2, 1, 2, 1);
+                @include index.setImageLinearGradient(2, 1, 2, 2, 4, 2);
+                @include index.setImageLinearGradient(3, 2, 3, 1, 4, 3);
+                @include index.setImageLinearGradient(4, 3, 4, 1, 2, 4);
+                @include index.setImageLinearGradient(5, 3, 4, 2, 3, 5);
+                @include index.setImageLinearGradient(6, 3, 4, 3, 4, 6);
 
             }
 
@@ -332,7 +289,266 @@ body {
     }
 
     .contact {
-        
+        height: 100vh;
+        margin-top: 60px;
+        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .form__container {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+
+            .form__register {
+                background-color: white;
+                padding: 50px 60px;
+                border-radius: 10px;
+                grid-column: 2 / 5;
+                grid-row: 2 / 6;
+                box-shadow: 15px 15px 20px 10px rgba(0, 0, 0, 0.3);
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: max-content max-content 1fr;
+                z-index: 1;
+
+                .form__title {
+                    font-size: index.$subtitle_size;
+                    font-family: index.$roboto-sans-serif;
+                    font-weight: index.$roboto_sans_serif_weight700;
+                    margin-bottom: 10px;
+                }
+
+                .form__paragraph {
+                    color: index.$color_paragraph;
+                    font-family: index.$roboto-sans-serif;
+                    font-size: index.$small_size;
+                    line-height: 1.5;
+
+                    .form__link {
+                        color: index.$color_link;
+                        display: block;
+                    }
+
+                }
+
+                .form__inputs {
+                    margin-top: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .form__group {
+                        position: relative;
+
+                        .form__input {
+                            border: 1px solid black;
+                            outline: none;
+                            display: block;
+                            width: 100%;
+                            padding: 15px 15px 15px 10px;
+                            color: index.$color_input;
+                            border: none;
+                            border-bottom: 1px solid index.$color_border_botom;
+                            font-family: index.$roboto-sans-serif;
+                            font-size: index.$small_size;
+                            font-weight: index.$roboto_sans_serif_weight300;
+
+                            &:focus {
+                                color: index.$color_input_focus;
+
+                                ~ .form__bar {
+                                    transform: scale(1);
+                                    transition: 400ms transform ease-in;
+                                    transform-origin: left;
+                                }
+
+                                + .form__label {
+                                    color: index.$color_bar;
+                                    transform: scale(0.7) translateY(-40px);
+                                    transition: 400ms transform ease-in-out, 200ms color 200ms ease-in-out;
+                                    transform-origin: left;
+                                }
+
+                            }
+
+                            &:not(:placeholder-shown) + .form__label {
+                                color: index.$color_bar;
+                                transform: scale(0.7) translateY(-40px);
+                                transition: 400ms transform ease-in-out, 200ms color 200ms ease-in-out;
+                                transform-origin: left;
+                            }
+
+                        }
+
+                        .form__label {
+                            position: absolute;
+                            top: 15px;
+                            left: 10px;
+                            color: index.$color_border_botom;
+                            font-family: index.$roboto-sans-serif;
+                            font-size: index.$small_size;
+                            font-weight: index.$roboto_sans_serif_weight300;
+                            pointer-events: none;
+                            transform: scale(1) translateY(0);
+                            transition: 400ms transform ease-in-out, 400ms color ease-in-out;
+                            transform-origin: left;
+                        }
+
+                        .form__bar {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            display: block;
+                            width: 100%;
+                            height: 2px;
+                            background-color: index.$color_bar;
+                            transform: scale(0);
+                            transition: 200ms transform ease-in;
+                            transform-origin: left;
+                        }
+
+                    }
+
+                    .form__submit {
+                        background-color: index.$color_menu;
+                        color: index.$color_text_1;
+                        font-family: index.$roboto-sans-serif;
+                        font-size: index.$small_size;
+                        font-weight: index.$roboto_sans_serif_weight700;
+                        padding: 0.8em 1.5em;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px;
+                        transform: scale(1);
+                        transition: 100ms transform ease-in-out;
+                        cursor: pointer;
+
+                        &:active {
+                            transform: scale(0.95);
+                            transition: 300ms transform ease-in-out;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .form__figure {
+                grid-column: 3 / -1;
+                grid-row: 1 / -1;
+                background-image: url(../assets/images/imagen_8.jpg);
+                background-position: center;
+                background-size: cover;
+                border-radius: 15px;
+            }
+
+        }
+
+    }
+
+    .rate {
+        height: 100vh;
+        margin-top: 40px;
+
+        .rate__content {
+            height: 75%;
+            display: flex;
+            justify-content: space-between;
+
+            .rate__figure {
+                width: 50%;
+
+                .rate__img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 5px;
+                }
+
+            }
+
+            .rate__texts {
+                width: 45%;
+                font-family: index.$roboto-sans-serif;
+
+                .rate__title {
+                    font-size: index.$title_size;
+                }
+
+                .rate__paragraph {
+                    margin-top: 40px;
+                    font-size: index.$paragraph_size;
+                }
+
+            }
+
+        }
+
+        .rate__users {
+            height: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            .users__figure {
+                width: 70px;
+                height: 70px;
+                background-color: gold;
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            }
+
+        }
+
+    }
+
+}
+
+.footer {
+    margin-top: 60px;
+    background-color: index.$color_menu;
+
+    .footer__container {
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+
+        .footer__texts {
+            width: 45%;
+            color: index.$color_text_1;
+            font-family: index.$roboto-sans-serif;
+
+            .footer__title {
+                font-size: index.$subtitle_size;
+                font-weight: index.$roboto_sans_serif_weight700;
+                margin-bottom: 1em;
+            }
+
+            .footer__paragraph {
+                font-size: index.$small_size;
+                font-weight: index.$roboto_sans_serif_weight300;
+            }
+
+        }
+
+        .footer__figure {
+            width: 50%;
+
+            .footer__img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: contain;
+            }
+
+        }
+
     }
 
 }

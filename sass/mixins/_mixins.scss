@@ -14,7 +14,6 @@
     margin: 0 auto;
     overflow: hidden;
     padding: variables.$paddingContainer;
-    //outline: 2px solid black;
 }
 
 @mixin setNavContainer {
@@ -32,4 +31,19 @@
 @mixin setBodySettings {
     min-height: 100vh;
     width: 100%;
+}
+
+@mixin setImageLinearGradient($positionElement, $columnStart, $columnEnd, $rowStart, $rowEnd, $imageNumber) {
+
+    &:nth-of-type(#{$positionElement}) {
+        grid-column: #{$columnStart} / #{$columnEnd};
+        grid-row: #{$rowStart} / #{$rowEnd};
+        background-image:
+        linear-gradient(to top, rgba(0, 0, 0, 0.5) 30%, transparent),
+        url(../assets/images/imagen_#{$imageNumber}.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 3px;
+    }
+    
 }
