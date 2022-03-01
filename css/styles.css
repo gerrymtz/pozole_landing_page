@@ -102,12 +102,12 @@ body {
   background-color: #EB5A2C;
   transform: scale(0);
   transition: 400ms transform ease-in-out;
-  transform-origin: left;
+  transform-origin: center;
 }
 .header .header__nav .nav__container .nav__menu .nav__list:hover::after {
   transform: scale(1);
   transition: 600ms transform ease-in-out;
-  transform-origin: left;
+  transform-origin: center;
 }
 .header .header__content {
   background-image: url(../assets/images/background.jpg);

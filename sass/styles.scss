@@ -91,13 +91,13 @@ body {
                         background-color: index.$color_principal;
                         transform: scale(0);
                         transition: 400ms transform ease-in-out;
-                        transform-origin: left;
+                        transform-origin: center;
                     }
 
                     &:hover::after {
                         transform: scale(1);
                         transition: 600ms transform ease-in-out;
-                        transform-origin: left;
+                        transform-origin: center;
                     }
 
                 }
