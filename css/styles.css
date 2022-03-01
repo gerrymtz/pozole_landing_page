@@ -210,11 +210,11 @@ body {
 .header .header__content .header__background .header__container .header__cards {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
   font-family: "Roboto", sans-serif;
   position: absolute;
   bottom: -100px;
   left: 0;
+  right: 0;
 }
 .header .header__content .header__background .header__container .header__cards .card {
   width: 20%;

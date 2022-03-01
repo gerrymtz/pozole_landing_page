@@ -214,11 +214,11 @@ body {
                 .header__cards {
                     display: flex;
                     justify-content: space-evenly;
-                    width: 100%;
                     font-family: index.$roboto-sans-serif;
                     position: absolute;
                     bottom: -100px;
                     left: 0;
+                    right: 0;
 
                     .card {
                         width: 20%;
