@@ -32,7 +32,12 @@ body {
 }
 @media screen and (max-width: 768px) {
   .header {
-    height: 200vh;
+    height: 160vh;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    height: 280vh;
   }
 }
 .header .header__nav {
@@ -253,7 +258,7 @@ body {
     position: static;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     flex: 1;
     row-gap: 40px;
@@ -552,7 +557,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .main .contact .form__container {
-    height: 800px;
+    height: 520px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
@@ -583,6 +588,7 @@ body {
     grid-column: 1/2;
     grid-row: 1/2;
     width: 100%;
+    height: 100%;
     place-self: center;
   }
 }
