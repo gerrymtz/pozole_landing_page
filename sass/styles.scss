@@ -757,7 +757,7 @@ body {
     background-color: index.$color_menu;
 
     .footer__container {
-        height: 300px;
+        min-height: 300px;
         display: flex;
         justify-content: space-between;
 
@@ -797,10 +797,45 @@ body {
                 font-weight: index.$roboto_sans_serif_weight300;
             }
 
+            .footer__return {
+                display: inline-block;
+                margin-top: 30px;
+                color: white;
+                text-decoration: none;
+                font-size: index.$small_size;
+                font-weight: index.$roboto_sans_serif_weight300;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    margin-left: 20px;
+                    width: 15px;
+                    height: 15px;
+                    border-right: 3px solid white;
+                    border-bottom: 3px solid white;
+                    transform: rotate(45deg);
+                    transition: 200ms all ease-in;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                    color: index.$color_principal;
+
+                    &::after {
+                        transform: rotate(225deg);
+                        transition: 200ms all ease-in;
+                        border-color: index.$color_principal;
+                    }
+
+                }
+
+            }
+
         }
 
         .footer__figure {
             width: 50%;
+            height: 200px;
 
             @media screen and (max-width: 768px) {
                 width: 50%;
