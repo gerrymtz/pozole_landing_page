@@ -623,13 +623,12 @@ body {
   position: relative;
 }
 .main .contact .form__container .form__register .form__inputs .form__group .form__input {
-  border: 1px solid black;
   outline: none;
   display: block;
   width: 100%;
   padding: 15px 15px 15px 10px;
   color: #C6C6C6;
-  border: none;
+  background-color: transparent;
   border-bottom: 1px solid #49454567;
   font-family: "Roboto", sans-serif;
   font-size: 1em;

@@ -531,13 +531,12 @@ body {
                         position: relative;
 
                         .form__input {
-                            border: 1px solid black;
                             outline: none;
                             display: block;
                             width: 100%;
                             padding: 15px 15px 15px 10px;
                             color: index.$color_input;
-                            border: none;
+                            background-color: transparent;
                             border-bottom: 1px solid index.$color_border_botom;
                             font-family: index.$roboto-sans-serif;
                             font-size: index.$small_size;
