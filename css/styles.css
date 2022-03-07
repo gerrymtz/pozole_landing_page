@@ -106,12 +106,12 @@ body {
   height: 2px;
   background-color: #EB5A2C;
   transform: scale(0);
-  transition: 400ms transform ease-in-out;
+  transition: 200ms transform ease-in-out;
   transform-origin: center;
 }
 .header .header__nav .nav__container .nav__menu .nav__list:hover::after {
   transform: scale(1);
-  transition: 600ms transform ease-in-out;
+  transition: 200ms transform ease-in-out;
   transform-origin: center;
 }
 .header .header__content {
@@ -861,6 +861,7 @@ body {
   font-weight: 300;
 }
 .footer .footer__container .footer__texts .footer__return {
+  text-transform: capitalize;
   display: inline-block;
   margin-top: 30px;
   color: white;
