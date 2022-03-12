@@ -40,9 +40,10 @@
         grid-row: #{$rowStart} / #{$rowEnd};
         background-image:
         linear-gradient(to top, rgba(0, 0, 0, 0.5) 30%, transparent),
-        url(../assets/images/imagen_#{$imageNumber}.jpg);
+        url(../assets/images/imagen_#{$imageNumber}.jpeg);
         background-position: center;
         background-size: cover;
+        background-repeat: no-repeat;
         border-radius: 3px;
     }
     

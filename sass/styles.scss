@@ -113,7 +113,7 @@ body {
     }
 
     .header__content {
-        background-image: url(../assets/images/background.jpg);
+        background-image: url(../assets/images/background.jpeg);
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
@@ -409,29 +409,29 @@ body {
 
             .gallery__figure {
 
-                @include index.setImageLinearGradient(1, 1, 2, 1, 2, 1);
-                @include index.setImageLinearGradient(2, 1, 2, 2, 4, 2);
-                @include index.setImageLinearGradient(3, 2, 3, 1, 4, 3);
-                @include index.setImageLinearGradient(4, 3, 4, 1, 2, 4);
-                @include index.setImageLinearGradient(5, 3, 4, 2, 3, 5);
-                @include index.setImageLinearGradient(6, 3, 4, 3, 4, 6);
+                @include index.setImageLinearGradient(1, 1, 2, 1, 2, 2);
+                @include index.setImageLinearGradient(2, 1, 2, 2, 4, 3);
+                @include index.setImageLinearGradient(3, 2, 3, 1, 4, 4);
+                @include index.setImageLinearGradient(4, 3, 4, 1, 2, 5);
+                @include index.setImageLinearGradient(5, 3, 4, 2, 3, 6);
+                @include index.setImageLinearGradient(6, 3, 4, 3, 4, 7);
 
                 @media screen and (max-width: 768px) {
-                    @include index.setImageLinearGradient(1, 1, 3, 1, 2, 1);
-                    @include index.setImageLinearGradient(2, 1, 2, 2, 3, 2);
-                    @include index.setImageLinearGradient(3, 1, 3, 3, 4, 3);
-                    @include index.setImageLinearGradient(4, 3, 4, 1, 2, 4);
-                    @include index.setImageLinearGradient(5, 2, 4, 2, 3, 5);
-                    @include index.setImageLinearGradient(6, 3, 4, 3, 4, 6);
+                    @include index.setImageLinearGradient(1, 1, 3, 1, 2, 2);
+                    @include index.setImageLinearGradient(2, 1, 2, 2, 3, 3);
+                    @include index.setImageLinearGradient(3, 1, 3, 3, 4, 4);
+                    @include index.setImageLinearGradient(4, 3, 4, 1, 2, 5);
+                    @include index.setImageLinearGradient(5, 2, 4, 2, 3, 6);
+                    @include index.setImageLinearGradient(6, 3, 4, 3, 4, 7);
                 }
 
                 @media screen and (max-width: 425px) {
-                    @include index.setImageLinearGradient(1, 1, 2, 1, 2, 1);
-                    @include index.setImageLinearGradient(2, 1, 2, 2, 3, 2);
-                    @include index.setImageLinearGradient(3, 1, 2, 3, 4, 3);
-                    @include index.setImageLinearGradient(4, 1, 2, 4, 5, 4);
-                    @include index.setImageLinearGradient(5, 1, 2, 5, 6, 5);
-                    @include index.setImageLinearGradient(6, 1, 2, 6, 7, 6);
+                    @include index.setImageLinearGradient(1, 1, 2, 1, 2, 2);
+                    @include index.setImageLinearGradient(2, 1, 2, 2, 3, 3);
+                    @include index.setImageLinearGradient(3, 1, 2, 3, 4, 4);
+                    @include index.setImageLinearGradient(4, 1, 2, 4, 5, 5);
+                    @include index.setImageLinearGradient(5, 1, 2, 5, 6, 6);
+                    @include index.setImageLinearGradient(6, 1, 2, 6, 7, 7);
                 }
 
             }
@@ -626,7 +626,7 @@ body {
             .form__figure {
                 grid-column: 3 / -1;
                 grid-row: 1 / -1;
-                background-image: url(../assets/images/imagen_8.jpg);
+                background-image: url(../assets/images/imagen_8.jpeg);
                 background-position: center;
                 background-size: cover;
                 border-radius: 15px;
