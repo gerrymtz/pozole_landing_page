@@ -642,15 +642,11 @@ body {
     }
 
     .rate {
-        height: 100vh;
-        margin-top: 40px;
-
-        @media screen and (max-width: 768px) {
-            height: auto;
-        }
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
 
         .rate__content {
-            height: 75%;
             display: flex;
             justify-content: space-between;
 
@@ -723,11 +719,11 @@ body {
         }
 
         .rate__users {
-            height: 25%;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
+            flex: 1;
 
             @media screen and (max-width: 768px) {
                 margin-top: 40px;
@@ -750,10 +746,38 @@ body {
 
     }
 
+    .return {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        cursor: pointer;
+
+        .return__icon {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            border-top: 5px solid index.$color_principal;
+            border-left: 5px solid index.$color_principal;
+            transform: rotate(45deg);
+        }
+
+        @media screen and (max-width: 768px) {
+            bottom: 30px;
+            right: 30px;
+        }
+
+    }
+
 }
 
 .footer {
-    margin-top: 60px;
     background-color: index.$color_menu;
 
     .footer__container {
@@ -795,41 +819,6 @@ body {
             .footer__paragraph {
                 font-size: index.$small_size;
                 font-weight: index.$roboto_sans_serif_weight300;
-            }
-
-            .footer__return {
-                text-transform: capitalize;
-                display: inline-block;
-                margin-top: 30px;
-                color: white;
-                text-decoration: none;
-                font-size: index.$small_size;
-                font-weight: index.$roboto_sans_serif_weight300;
-
-                &::after {
-                    content: "";
-                    display: inline-block;
-                    margin-left: 20px;
-                    width: 15px;
-                    height: 15px;
-                    border-right: 3px solid white;
-                    border-bottom: 3px solid white;
-                    transform: rotate(45deg);
-                    transition: 200ms all ease-in;
-                }
-
-                &:hover {
-                    text-decoration: underline;
-                    color: index.$color_principal;
-
-                    &::after {
-                        transform: rotate(225deg);
-                        transition: 200ms all ease-in;
-                        border-color: index.$color_principal;
-                    }
-
-                }
-
             }
 
         }

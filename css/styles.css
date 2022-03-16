@@ -729,16 +729,11 @@ body {
   }
 }
 .main .rate {
-  height: 100vh;
-  margin-top: 40px;
-}
-@media screen and (max-width: 768px) {
-  .main .rate {
-    height: auto;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .main .rate .rate__content {
-  height: 75%;
   display: flex;
   justify-content: space-between;
 }
@@ -808,11 +803,11 @@ body {
   }
 }
 .main .rate .rate__users {
-  height: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex: 1;
 }
 @media screen and (max-width: 768px) {
   .main .rate .rate__users {
@@ -831,9 +826,35 @@ body {
     height: 45px;
   }
 }
+.main .return {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  cursor: pointer;
+}
+.main .return .return__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border-top: 5px solid #EB5A2C;
+  border-left: 5px solid #EB5A2C;
+  transform: rotate(45deg);
+}
+@media screen and (max-width: 768px) {
+  .main .return {
+    bottom: 30px;
+    right: 30px;
+  }
+}
 
 .footer {
-  margin-top: 60px;
   background-color: black;
 }
 .footer .footer__container {
@@ -877,35 +898,6 @@ body {
 .footer .footer__container .footer__texts .footer__paragraph {
   font-size: 1em;
   font-weight: 300;
-}
-.footer .footer__container .footer__texts .footer__return {
-  text-transform: capitalize;
-  display: inline-block;
-  margin-top: 30px;
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: 300;
-}
-.footer .footer__container .footer__texts .footer__return::after {
-  content: "";
-  display: inline-block;
-  margin-left: 20px;
-  width: 15px;
-  height: 15px;
-  border-right: 3px solid white;
-  border-bottom: 3px solid white;
-  transform: rotate(45deg);
-  transition: 200ms all ease-in;
-}
-.footer .footer__container .footer__texts .footer__return:hover {
-  text-decoration: underline;
-  color: #EB5A2C;
-}
-.footer .footer__container .footer__texts .footer__return:hover::after {
-  transform: rotate(225deg);
-  transition: 200ms all ease-in;
-  border-color: #EB5A2C;
 }
 .footer .footer__container .footer__figure {
   width: 50%;
