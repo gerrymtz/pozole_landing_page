@@ -25,10 +25,6 @@ body {
         height: auto;
         background-color: index.$color_menu;
 
-        @media screen and (max-width: 425px) {
-            height: 120px;
-        }
-
         .nav__container {
             height: index.$height_navbar;
             @include index.setNavContainer;
@@ -37,6 +33,7 @@ body {
             align-items: center;
 
             @media screen and (max-width: 425px) {
+                height: 125px;
                 flex-direction: column;
             }
 
@@ -119,6 +116,10 @@ body {
             font-family: index.$roboto-sans-serif;
             display: flex;
             flex-direction: column;
+
+            @media screen and (max-width: 425px) {
+                min-height: calc(100vh - 125px);
+            }
 
             .header__texts {
                 flex: 1;

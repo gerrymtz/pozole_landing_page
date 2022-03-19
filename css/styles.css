@@ -34,11 +34,6 @@ body {
   height: auto;
   background-color: black;
 }
-@media screen and (max-width: 425px) {
-  .header .header__nav {
-    height: 120px;
-  }
-}
 .header .header__nav .nav__container {
   height: 90px;
   width: 90%;
@@ -52,6 +47,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .header .header__nav .nav__container {
+    height: 125px;
     flex-direction: column;
   }
 }
@@ -117,6 +113,11 @@ body {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 425px) {
+  .header .header__content .header__container {
+    min-height: calc(100vh - 125px);
+  }
 }
 .header .header__content .header__container .header__texts {
   flex: 1;
